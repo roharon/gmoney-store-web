@@ -1,0 +1,52 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    background-color: #f1f3f7;
+    color: black;
+}
+  
+.box {
+    margin-left: 20px;
+    margin-right: 20px;
+    align-content: center;
+    height: 100%;
+
+}
+  
+.item{
+    align-items: center;
+    margin-bottom: auto;
+    margin-right: 5px;
+    margin-left: 5px;
+    overflow: visible;
+}
+  
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    transition: 0.5s;
+    padding: 3vh;
+    margin-top: 3vh;
+  
+    border-radius: 20px;
+    background: #f1f3f7;
+    box-shadow:  8px 8px 15px #8e8f92, 
+                 -8px -8px 15px #ffffff;
+}
+
+.card:active{
+  border-radius: 20px;
+  background: #f1f3f7;
+  box-shadow: inset 8px 8px 13px #8e8f92, 
+              inset -8px -8px 13px #ffffff;
+}
