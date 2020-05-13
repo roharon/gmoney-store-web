@@ -15,17 +15,15 @@
     transition: 0.3s;
     margin: 3vh;
     padding: 1vh;
-  
-    border-radius: 5px;
-    background: #F2F3F7;
-    box-shadow: -6px -6px 16px #FFFFFF,
-                6px 6px 16px #BECDE2;
+    border-radius: 20px;
+    background: linear-gradient(134.17deg, #EEF0F5 4.98%, #E6E9EF 94.88%);
+    box-shadow: 10px 10px 20px rgba(166, 180, 200, 0.7), -10px -10px 20px rgba(255, 255, 255, 0.8);
 }
 
 .card:active{
     border-radius: 5px;
     background: #F2F3F7;
-    box-shadow: inset 3px 6px 12px #BECDE2, 
+    box-shadow: inset 3px 6px 12px #caccd0,
                 inset -6px -6px 12px #ffffff;
 }
 

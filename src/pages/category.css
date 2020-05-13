@@ -1,0 +1,68 @@
+.item{
+    align-items: center;
+    margin-bottom: auto;
+    margin-right: 5px;
+    margin-left: 5px;
+    overflow: visible;
+}
+  
+.content .list {
+    font-family: 'NanumBarunGothic';
+    display: grid;
+    grid-template-columns:
+        [name-start] 65%
+        [name-end property-start] 35%
+        [property-end];
+    align-items: center;
+    justify-content: stretch;
+    height: 10vh;
+    transition: 0.3s;
+    margin: 2vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    padding: 1vh;
+    border-radius: 5px;
+    background: #EEF0F5;
+    box-shadow: -3px -3px 8px #FFFFFF,
+                3px 3px 8px #BECDE2;
+}
+
+.name {
+    width: 100%;
+    font-family: 'NanumBarunGothicBold';
+    font-size: 20px;
+}
+
+.content .list .property {
+    font-size: 10px;
+    display: grid;
+    grid-template-columns: 
+        [category-start] 45%
+        [category-end stick-start] 10%
+        [stick-end address-start] 45%
+        [address-end];
+    text-align: center;
+    width: 80%;
+    height: 50%;
+    padding: 10px;
+    border-radius: 20px;
+    background: #E9EDF0;
+    box-shadow: inset 5px 4px 6px rgba(166, 180, 200, 0.65), inset -5px -5px 15px rgba(255, 255, 255, 0.75);
+}
+
+.content .list .property .category {
+    height: 100%;
+    width: 100%;
+    margin: 1%;
+    border-radius: 15px;
+    background: #EEF0F5;
+    box-shadow: -3px -3px 5px #FFFFFF,
+                3px 3px 5px #BECDE2;
+    
+}
+
+.property .category .icon {
+    margin: 1vh;
+    height: 3vh;
+    width: 5vw;
+}

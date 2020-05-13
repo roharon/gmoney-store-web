@@ -4,12 +4,11 @@
     height: 100%;
     text-align: center;
     overflow: scroll;
-  
-    background-color: #F2F3F7;
     color: black;
+    background-color: #EEF0F5;
   }
   
-  .content .title {
+.content .title {
     text-align: left;
     color: "#949494";
     font-size: 18px; 
