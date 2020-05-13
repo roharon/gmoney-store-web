@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Item from './item';
+import Item from './menuBarItem';
 import { FiHome, FiMap, FiSettings } from 'react-icons/fi';
 
 const MenuBar = (props) => {
