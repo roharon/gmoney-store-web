@@ -69,7 +69,7 @@ const CategoryList = ({ match }) => {
   return (
     <div className="content">
       <p className="title">
-        <FormattedMessage id={match.params.category} /> 메뉴
+        나와 가까운 <FormattedMessage id={match.params.category} />
       </p>
       {<StoreCard Item={store} />}
     </div>

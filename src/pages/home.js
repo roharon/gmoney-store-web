@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import { WhiteSpace } from 'antd-mobile';
 import HomeCardList from '../component/homeCardList';
 import AddressPicker from '../component/addressPicker';
@@ -16,14 +16,14 @@ const Home = () => {
 
   return (
     <div className="content">
-      <p className="title">
-        카테고리
-      </p>
       <AddressPicker
         onChange={handleOnChange}
         value={address}
       />
-      <HomeCardList />     
+      <p className="title">
+        카테고리
+      </p>
+      <HomeCardList />
 
       <p className="title">
         안내
