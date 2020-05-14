@@ -53,8 +53,8 @@ const HomeCardList = () => {
         params: {
           category: 'restaurant',
           sigoon: sigoon,
-          lat: 37.004176,
-          lng: 127.07123
+          lat: latitude,
+          lng: longitude
         }
       })
       setRestaCount(response.data['data']['restaurant']);
