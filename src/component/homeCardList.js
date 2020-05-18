@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { Flex } from 'antd-mobile';
 import axios from 'axios';
-
-import { usePosition } from './usePosition';
 import './homeCardList.css';
 
 

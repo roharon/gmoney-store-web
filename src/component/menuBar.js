@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Item from './menuBarItem';
 import { FiHome, FiMap, FiSettings, FiSearch } from 'react-icons/fi';
-import MapIcon from '../svg/map.svg';
 
 const MenuBar = (props) => {
     const { active, setActive } = props;

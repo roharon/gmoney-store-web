@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 import axios from 'axios';
-import { usePosition } from 'component/usePosition';
 import StoreCard from 'component/storeCard';
 import './category.css';
 
@@ -30,11 +29,10 @@ const CategoryList = (props) => {
         ))
     }
     getStoreByCategory(0);
-  },[lat, lng]);
+  },[lat, lng, category, sigoon]);
 
+  //TODO: infinite-scroll 적용
 
-  //TODO: StoreCard infinite-scroll 적용
-  // search 페이지와 같이 쓰일테니 storeCard listView 공통컴포넌트를 만들어서 쓰자
   return (
     <div className="content">
       <p className="title">

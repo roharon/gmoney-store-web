@@ -2,7 +2,6 @@ import React from 'react';
 import MapIcon from '../svg/map.svg';
 import PhoneIcon from '../svg/phone.svg';
 import './storeCard.css'
-import { Empty } from 'antd';
 
 const EmptyCard = (props) => {
   const {msg} = props;
@@ -14,7 +13,7 @@ const EmptyCard = (props) => {
 }
 
 const StoreCard = (props) => {
-  const { Item, emptyMsg } = props;
+  const { Item, emptyMsg, emptyShow } = props;
 
   const itemData = Object.keys(Item).map((key) => {
     return (
@@ -42,7 +41,7 @@ const StoreCard = (props) => {
 
   return (
     <div>
-      {itemData.length != 0 ? itemData : <EmptyCard msg={emptyMsg}/>}
+      {itemData.length !== 0 ? itemData : emptyShow && <EmptyCard msg={emptyMsg}/>}
     </div>
   )
 }

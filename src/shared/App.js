@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from 'component/header';
 import Home from 'pages/home';
