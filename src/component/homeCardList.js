@@ -49,7 +49,7 @@ const HomeCardList = () => {
 
   useEffect(() => {
     const getRestaCount = async () => {
-      const response = await axios.get('/store/near/category/count', {
+      const response = await axios.get('/api/v1/store/near/category/count', {
         params: {
           category: 'restaurant',
           sigoon: sigoon,
@@ -61,7 +61,7 @@ const HomeCardList = () => {
     }
 
     const getMarketCount = async () => {
-      const response = await axios.get('/store/near/category/count', {
+      const response = await axios.get('/api/v1/store/near/category/count', {
         params: {
           category: 'market',
           sigoon: sigoon,
@@ -75,7 +75,7 @@ const HomeCardList = () => {
     }
 
     const getPharmacyCount = async () => {
-      const response = await axios.get('/store/near/category/count', {
+      const response = await axios.get('/api/v1/store/near/category/count', {
         params: {
           category: 'pharmacy',
           sigoon: sigoon,
@@ -89,7 +89,7 @@ const HomeCardList = () => {
     }
 
     const getCvsCount = async () => {
-      const response = await axios.get('/store/near/category/count', {
+      const response = await axios.get('/api/v1/store/near/category/count', {
         params: {
           category: 'cvs',
           sigoon: sigoon,
