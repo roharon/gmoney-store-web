@@ -2,76 +2,45 @@ import React, { useState, useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 import axios from 'axios';
 import { usePosition } from 'component/usePosition';
-import MapIcon from '../svg/map.svg';
-import PhoneIcon from '../svg/phone.svg';
+import StoreCard from 'component/storeCard';
 import './category.css';
 
 
-const StoreCard = (props) => {
-  const { Item } = props;
-
-  const itemData = Object.keys(Item).map((key) => {
-    return (
-      <div key={key} className="list">
-        <div className="name">
-          {Item[key]['title']}
-        </div>
-        <div className="property">
-          <div className="category">
-            <div className="category">
-              <a href={`tel:${Item[key]['phoneNumber']}`}>
-              <img className="icon" src={PhoneIcon} alt="전화" />
-              </a>
-            </div>
-          </div>
-          <div className="stick" />
-          <div className="category">
-            <img className="icon" src={MapIcon} alt="지도" />
-          </div>
-
-        </div>
-      </div>
-    )
-  })
-
-  return (
-    <div>
-      {itemData}
-    </div>
-  )
-}
-
-const CategoryList = ({ match }) => {
+const CategoryList = (props) => {
+  const category = props.match.params.category;
+  const {lat, lng} = props.location.state;
   const [store, setStore] = useState({});
-  const { latitude, longitude } = usePosition();
 
   const sigoon = localStorage.getItem('sigoon');
 
   useEffect(() => {
-    const getStoreByCategory = async (setStore, category, page) => {
+    const getStoreByCategory = async (page) => {
       await axios
-        .get('/store/near/category', {
+        .get('/api/v1/store/near/category', {
           params: {
             page: page,
             category: category,
             sigoon: sigoon,
-            lat: latitude,
-            lon: longitude
+            lat: lat,
+            lng: lng
           }
         })
         .then(data => (
           setStore(data.data.data.content)
         ))
     }
-    getStoreByCategory(setStore, match.params.category, 0);
-  }, [match.params.category, longitude, latitude]);
+    getStoreByCategory(0);
+  },[lat, lng]);
 
+
+  //TODO: StoreCard infinite-scroll 적용
+  // search 페이지와 같이 쓰일테니 storeCard listView 공통컴포넌트를 만들어서 쓰자
   return (
     <div className="content">
       <p className="title">
-        나와 가까운 <FormattedMessage id={match.params.category} />
+        나와 가까운 <FormattedMessage id={category} />
       </p>
-      {<StoreCard Item={store} />}
+      {<StoreCard Item={store} emptyMsg="불러오는 중"/>}  
     </div>
   )
 };

@@ -8,9 +8,15 @@ import { usePosition } from './usePosition';
 import './homeCardList.css';
 
 
-const cardBanner = (name, count) => {
+const cardBanner = (name, count, lat, lng) => {
   return (
-    <Link to={`/store/${name}`}>
+    <Link to={{
+      pathname: `/store/${name}`,
+      state: {
+        lat: lat,
+        lng: lng,
+      }
+    }}>
       <div className="card">
         <div style={{ height: '100%', width: '100%' }}>
           <div style={{
@@ -33,17 +39,17 @@ const cardBanner = (name, count) => {
   )
 }
 
-const HomeCardList = () => {
-  const { latitude, longitude, error } = usePosition();
+const HomeCardList = (props) => {
+  const { latitude, longitude } = props;
   const [restaCount, setRestaCount] = useState(null);
   const [marketCount, setMarketCount] = useState(null);
   const [pharmacyCount, setPharmacyCount] = useState(null);
   const [cvsCount, setCvsCount] = useState(null);
 
-  const cardResta = cardBanner('restaurant', restaCount);
-  const cardMarket = cardBanner('market', marketCount);
-  const cardCafe = cardBanner('pharmacy', pharmacyCount);
-  const cardCvs = cardBanner('cvs', cvsCount);
+  const cardResta = cardBanner('restaurant', restaCount, latitude, longitude);
+  const cardMarket = cardBanner('market', marketCount, latitude, longitude);
+  const cardCafe = cardBanner('pharmacy', pharmacyCount, latitude, longitude);
+  const cardCvs = cardBanner('cvs', cvsCount, latitude, longitude);
 
   let sigoon = localStorage.getItem('sigoon');
 
@@ -83,8 +89,7 @@ const HomeCardList = () => {
           lng: longitude
         },
         timeout: 3000
-      }
-      )
+      })
       setPharmacyCount(response.data['data']['pharmacy'])
     }
 
@@ -97,8 +102,7 @@ const HomeCardList = () => {
           lng: longitude
         },
         timeout: 3000
-      }
-      )
+      })
       setCvsCount(response.data['data']['cvs'])
     }
 
