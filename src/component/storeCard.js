@@ -31,7 +31,11 @@ const StoreCard = (props) => {
           </div>
           <div className="stick" />
           <div className="category">
-            <img className="icon" src={MapIcon} alt="지도" />
+            <a href={
+              `kakaomap://look?p=${Item[key]['latitude']},${Item[key]['longitude']}`
+            }>
+              <img className="icon" src={MapIcon} alt="지도" />
+            </a>
           </div>
 
         </div>
