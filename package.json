@@ -2,6 +2,7 @@
   "name": "gmoney-web",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8055",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -11,15 +12,19 @@
     "axios": "^0.19.2",
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
+    "node-sass": "^4.14.1",
     "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
-    "react-scripts": "3.4.1"
+    "react-intl": "^4.5.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "react-spring": "^8.0.27"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "cross-env NODE_PATH=src react-scripts start",
+    "build": "cross-env NODE_PATH=src react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -37,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
   }
 }

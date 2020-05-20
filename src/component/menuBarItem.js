@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSpring, animated } from 'react-spring';
 
-function Item (props) {
+const Item = (props) => {
   const {logo, value, text, isActive, setActive} = props;
   const {xy, clipPath1} = useSpring({
     clipPath1: isActive ? 
