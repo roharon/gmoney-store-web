@@ -4,7 +4,6 @@ import Header from 'component/header';
 import Home from 'pages/home';
 import Search from 'pages/search';
 import Map from 'pages/map';
-import Setting from 'pages/setting';
 import CategoryList from 'pages/category';
 import MenuBar from 'component/menuBar';
 import './App.css'
@@ -22,7 +21,6 @@ const App = () => {
 			<Switch>
 				<Route path="/search" component={Search} />
 				<Route path="/map" component={Map} />
-				<Route path="/setting" component={Setting} />
 				<Route path="/store/:category" component={CategoryList} />
 			</Switch>
 			<MenuBar
