@@ -1,0 +1,19 @@
+version: '3.4'
+services:
+  web:
+    build: .
+    container_name: client
+    restart: "on-failure"
+    expose:
+      - 3000
+    environment:
+      - NODE_DEV=production
+      - CHOKIDAR_USEPOLLING=true
+    stdin_open: true
+    tty: true
+    networks:
+      - nginx_network
+
+networks:
+  nginx_network:
+    external: true
