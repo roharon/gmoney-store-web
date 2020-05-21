@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Item from './menuBarItem';
-import { FiHome, FiMap, FiSearch } from 'react-icons/fi';
+import { FiHome, FiSearch } from 'react-icons/fi';
 
 const MenuBar = (props) => {
     const { active, setActive } = props;
@@ -25,6 +25,11 @@ const MenuBar = (props) => {
                     isActive={active === 'search'}
                     setActive={setActive}
                 /></Link>
+        </div>
+    )
+}
+
+/*
             <Link to="/map">
                 <Item
                     key={'map-menu-bar'}
@@ -34,9 +39,7 @@ const MenuBar = (props) => {
                     isActive={active === 'map'}
                     setActive={setActive}
                 /></Link>
-        </div>
-    )
-}
+*/
 
 
 export default MenuBar;

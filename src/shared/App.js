@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import Header from 'component/header';
 import Home from 'pages/home';
 import Search from 'pages/search';
-import Map from 'pages/map';
 import CategoryList from 'pages/category';
 import MenuBar from 'component/menuBar';
 import './App.css'
@@ -20,7 +19,6 @@ const App = () => {
 			<Route exact path="/" component={Home} />
 			<Switch>
 				<Route path="/search" component={Search} />
-				<Route path="/map" component={Map} />
 				<Route path="/store/:category" component={CategoryList} />
 			</Switch>
 			<MenuBar
