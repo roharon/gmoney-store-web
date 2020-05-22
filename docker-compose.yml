@@ -1,9 +1,9 @@
 version: '3.4'
 services:
   web:
-    container_name: web
-    build: .
     restart: "on-failure"
+    image: 'registry.gitlab.com/roharon/gmoney-store-web'
+    container_name: web
     environment:
       - NODE_DEV=production
       - CHOKIDAR_USEPOLLING=true

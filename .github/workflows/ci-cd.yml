@@ -8,15 +8,6 @@ on:
     branches: [ master ]
 
 jobs:
-  npm_build:
-    name: NPM Build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12'
-    - run: npm install
-
   docker_build_and_push:
     name: Docker Build & Push to registry
     runs-on: ubuntu-latest
@@ -42,7 +33,7 @@ jobs:
         username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
         password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
         registry: ${{ secrets.DOCKER_REGISTRY_URL }}
-        repository: ${{ secrets.DOCKER_REGISTRY_USERNAME}}/gmoney-store-server
+        repository: ${{ secrets.DOCKER_REGISTRY_USERNAME}}/gmoney-store-web
         tag_with_ref: true
         tag_with_sha: true
 
