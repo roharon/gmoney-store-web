@@ -8,6 +8,15 @@ on:
     branches: [ master ]
 
 jobs:
+  npm_build:
+    name: NPM Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12'
+    - run: npm install
+
   docker_build_and_push:
     name: Docker Build & Push to registry
     runs-on: ubuntu-latest
@@ -18,10 +27,11 @@ jobs:
         login-server: ${{ secrets.DOCKER_REGISTRY_URL }} # default: index.docker.io
         username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
         password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
+    - uses: actions/checkout@v2
     - name: Build the docker
       run: |
         docker network create gmoney-net
-        docker-compose up -d
+        docker-compose -f docker-compose.yml up -d
     - name: Check running containers
       run: docker ps -a
     - name: Check Logs
