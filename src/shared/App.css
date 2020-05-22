@@ -1,0 +1,26 @@
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+.menu-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #EEF0F5;
+    height: 7vh;
+    width: 100vw;
+    overflow: hidden;
+    user-select: none;
+}
+
+@keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}

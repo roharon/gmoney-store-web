@@ -1,0 +1,17 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    overflow: scroll;
+    color: black;
+    background-color: #EEF0F5;
+  }
+  
+.content .title {
+    text-align: left;
+    color: "#949494";
+    font-size: 18px; 
+    margin-left: 30px;
+    margin-bottom: 0px;
+  }

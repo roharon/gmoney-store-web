@@ -1,0 +1,12 @@
+.select-control {
+  font-family: 'GmarketSansBold';
+  justify-content: center;
+  height: 5vh;
+  transition: 0.3s;
+  margin: 1vh;
+  padding: 1vh;
+  border: 0;
+  border-radius: 15px;
+  background: linear-gradient(171.1deg, #EEF1F5 4.98%, #E6E9EF 94.88%);
+  box-shadow: inset 2px 2px 4px #cecfd2, inset -2px -2px 4px #FFFFFF;
+}

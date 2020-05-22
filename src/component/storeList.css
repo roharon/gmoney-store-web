@@ -1,0 +1,15 @@
+.card {
+    font-family: 'GmarketSansBold';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    transition: 0.3s;
+    margin: 3vh;
+    padding: 1vh;
+  
+    border-radius: 5px;
+    background: #F2F3F7;
+    box-shadow: -6px -6px 16px #FFFFFF,
+                6px 6px 16px #BECDE2;
+}
