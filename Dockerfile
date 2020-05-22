@@ -1,15 +1,15 @@
-FROM node:12.2.0-alpine
-MAINTAINER AaronRoh
+FROM node:13.12.0-alpine as build
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm ci --silent
+RUN npm install react-scripts@3.4.1 -g --silent
+COPY . ./
+RUN npm run build
 
-RUN mkdir /web
-WORKDIR /web
-ENV PATH /node_modules/.bin:$PATH
-COPY package.json /web/package.json
-
-RUN npm install --no-cache
-RUN npm install -g react-scripts
-RUN npm install -g react-router-dom
-RUN apk add --no-cache git
-
-COPY . /web
-CMD ["npm", "start"]
+# production environment
+FROM nginx:stable-alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

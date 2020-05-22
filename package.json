@@ -2,7 +2,7 @@
   "name": "gmoney-web",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://127.0.0.1:8055",
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "@testing-library/jest-dom": "^5.8.0",
     "@testing-library/react": "^10.0.4",
