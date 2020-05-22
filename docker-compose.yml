@@ -12,8 +12,10 @@ services:
     stdin_open: true
     tty: true
     networks:
-      - nginx_network
+      gmoney-net:
+        aliases:
+          - web
 
 networks:
-  nginx_network:
+  gmoney-net:
     external: true
