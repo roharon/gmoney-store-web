@@ -35,7 +35,7 @@ jobs:
     - name: Check running containers
       run: docker ps -a
     - name: Check Logs
-      run: docker logs app
+      run: docker logs web
     - uses: docker/build-push-action@v1
       name: Docker build & Push to Registry
       with:
