@@ -36,21 +36,3 @@ jobs:
         repository: ${{ secrets.DOCKER_REGISTRY_USERNAME}}/gmoney-store-web
         tag_with_ref: true
         tag_with_sha: true
-
-  deploy_swarm:
-    name: Deploy to Swarm
-    needs: docker_build_and_push
-    runs-on: ubuntu-latest
-    steps:
-    - name: Deploy to Docker swarm
-      uses: wshihadeh/docker-deployment-action@v1
-      with:
-        remote_docker_host: ${{ secrets.SERVER_HOSTNAME }}@${{ secrets.SERVER_DOMAIN}}
-        ssh_private_key: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
-        ssh_public_key: ${{ secrets.SERVER_SSH_PUBLIC_KEY }}
-        deployment_mode: docker-swarm
-        copy_stack_file: true
-        deploy_path: ${{ secrets.SERVER_DEPLOY_PATH }}
-        stack_file_name: docker-compose.yml
-        keep_files: 5
-        args: web
