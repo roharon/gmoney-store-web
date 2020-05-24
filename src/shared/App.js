@@ -4,6 +4,7 @@ import Header from 'component/header';
 import Home from 'pages/home';
 import Search from 'pages/search';
 import CategoryList from 'pages/category';
+import Card from 'pages/card';
 import MenuBar from 'component/menuBar';
 import './App.css'
 
@@ -20,6 +21,7 @@ const App = () => {
 			<Switch>
 				<Route path="/search" component={Search} />
 				<Route path="/store/:category" component={CategoryList} />
+				<Route path="/card" component={Card} />
 			</Switch>
 			<MenuBar
 				active={active}

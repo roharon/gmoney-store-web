@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Item from './menuBarItem';
 import { FiHome, FiSearch } from 'react-icons/fi';
+import { BsCreditCard } from 'react-icons/bs';
 
 const MenuBar = (props) => {
     const { active, setActive } = props;
@@ -23,6 +24,15 @@ const MenuBar = (props) => {
                     logo={<FiSearch />}
                     text={'검색'}
                     isActive={active === 'search'}
+                    setActive={setActive}
+                /></Link>
+            <Link to="/card">
+                <Item
+                    key={'creditcard-menu-bar'}
+                    value={'credit-card'}
+                    logo={<BsCreditCard />}
+                    text={'카드조회'}
+                    isActive={active === 'credit-card'}
                     setActive={setActive}
                 /></Link>
         </div>
