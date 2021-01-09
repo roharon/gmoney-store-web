@@ -7,7 +7,7 @@
 <br/>
 
 <p align="center" >
-<img src="https://user-images.githubusercontent.com/4939738/104093467-05dc5b00-52ce-11eb-98c8-e10b2ebda4f8.png" alt="image" height="480" />
+<img src="./public/demo.gif" alt="image" height="480" />
 </p>
 
 <br/>
@@ -62,12 +62,10 @@ This repository is the web client for Gmoney-Store
 	$ sudo docker run -it -p 8000:80 gmoney-store-web
 	```
 
-2. open [localhost:8000](localhost:8000)
+2. open [localhost:8000](http://localhost:8000)
 
 
 <br/>
-<br/>
-
 
 
 ## Getting Started - without Docker
@@ -88,7 +86,7 @@ This repository is the web client for Gmoney-Store
    $ npm start
    ```
 
-2. open [localhost:3000](localhost:3000) on your browser
+2. open [localhost:3000](http://localhost:3000) on your browser
 
 
 <br/>
